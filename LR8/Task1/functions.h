@@ -19,6 +19,9 @@ typedef struct person {
 extern person* a;
 extern int n;
 
+void input1();
+void input2();
+void input3();
 void input();
 void output();
 void add();

@@ -23,12 +23,12 @@ void find() {
             for (int i = 0; i < n; i++) {
                 if (a[i].surname == s) {
                     cnt++;
-                    std::cout << "1: " << a[i].surname << '\n';
-                    std::cout << "2: " << a[i].name << '\n';
-                    std::cout << "3: " << a[i].papa << '\n';
-                    std::cout << "4: " << a[i].number << '\n';
-                    std::cout << "5: " << a[i].post << '\n';
-                    std::cout << "6: " << a[i].years << '\n';
+                    std::cout << "Фамилия: " << a[i].surname << '\n';
+                    std::cout << "Имя: " << a[i].name << '\n';
+                    std::cout << "Отчество: " << a[i].papa << '\n';
+                    std::cout << "Номер отдела: " << a[i].number << '\n';
+                    std::cout << "Должность: " << a[i].post << '\n';
+                    std::cout << "Стаж: " << a[i].years << '\n';
                     std::cout << '\n';
                 }
             }
@@ -43,12 +43,12 @@ void find() {
             for (int i = 0; i < n; i++) {
                 if (a[i].name == s) {
                     cnt++;
-                    std::cout << "1: " << a[i].surname << '\n';
-                    std::cout << "2: " << a[i].name << '\n';
-                    std::cout << "3: " << a[i].papa << '\n';
-                    std::cout << "4: " << a[i].number << '\n';
-                    std::cout << "5: " << a[i].post << '\n';
-                    std::cout << "6: " << a[i].years << '\n';
+                    std::cout << "Фамилия: " << a[i].surname << '\n';
+                    std::cout << "Имя: " << a[i].name << '\n';
+                    std::cout << "Отчество: " << a[i].papa << '\n';
+                    std::cout << "Номер отдела: " << a[i].number << '\n';
+                    std::cout << "Должность: " << a[i].post << '\n';
+                    std::cout << "Стаж: " << a[i].years << '\n';
                     std::cout << '\n';
                 }
             }
@@ -63,12 +63,12 @@ void find() {
             for (int i = 0; i < n; i++) {
                 if (a[i].papa == s) {
                     cnt++;
-                    std::cout << "1: " << a[i].surname << '\n';
-                    std::cout << "2: " << a[i].name << '\n';
-                    std::cout << "3: " << a[i].papa << '\n';
-                    std::cout << "4: " << a[i].number << '\n';
-                    std::cout << "5: " << a[i].post << '\n';
-                    std::cout << "6: " << a[i].years << '\n';
+                    std::cout << "Фамилия: " << a[i].surname << '\n';
+                    std::cout << "Имя: " << a[i].name << '\n';
+                    std::cout << "Отчество: " << a[i].papa << '\n';
+                    std::cout << "Номер отдела: " << a[i].number << '\n';
+                    std::cout << "Должность: " << a[i].post << '\n';
+                    std::cout << "Стаж: " << a[i].years << '\n';
                     std::cout << '\n';
                 }
             }
@@ -83,12 +83,12 @@ void find() {
             for (int i = 0; i < n; i++) {
                 if (a[i].number == x) {
                     cnt++;
-                    std::cout << "1: " << a[i].surname << '\n';
-                    std::cout << "2: " << a[i].name << '\n';
-                    std::cout << "3: " << a[i].papa << '\n';
-                    std::cout << "4: " << a[i].number << '\n';
-                    std::cout << "5: " << a[i].post << '\n';
-                    std::cout << "6: " << a[i].years << '\n';
+                    std::cout << "Фамилия: " << a[i].surname << '\n';
+                    std::cout << "Имя: " << a[i].name << '\n';
+                    std::cout << "Отчество: " << a[i].papa << '\n';
+                    std::cout << "Номер отдела: " << a[i].number << '\n';
+                    std::cout << "Должность: " << a[i].post << '\n';
+                    std::cout << "Стаж: " << a[i].years << '\n';
                     std::cout << '\n';
                 }
             }
@@ -103,12 +103,12 @@ void find() {
             for (int i = 0; i < n; i++) {
                 if (a[i].post == s) {
                     cnt++;
-                    std::cout << "1: " << a[i].surname << '\n';
-                    std::cout << "2: " << a[i].name << '\n';
-                    std::cout << "3: " << a[i].papa << '\n';
-                    std::cout << "4: " << a[i].number << '\n';
-                    std::cout << "5: " << a[i].post << '\n';
-                    std::cout << "6: " << a[i].years << '\n';
+                    std::cout << "Фамилия: " << a[i].surname << '\n';
+                    std::cout << "Имя: " << a[i].name << '\n';
+                    std::cout << "Отчество: " << a[i].papa << '\n';
+                    std::cout << "Номер отдела: " << a[i].number << '\n';
+                    std::cout << "Должность: " << a[i].post << '\n';
+                    std::cout << "Стаж: " << a[i].years << '\n';
                     std::cout << '\n';
                 }
             }
@@ -123,12 +123,12 @@ void find() {
             for (int i = 0; i < n; i++) {
                 if (a[i].years == x) {
                     cnt++;
-                    std::cout << "1: " << a[i].surname << '\n';
-                    std::cout << "2: " << a[i].name << '\n';
-                    std::cout << "3: " << a[i].papa << '\n';
-                    std::cout << "4: " << a[i].number << '\n';
-                    std::cout << "5: " << a[i].post << '\n';
-                    std::cout << "6: " << a[i].years << '\n';
+                    std::cout << "Фамилия: " << a[i].surname << '\n';
+                    std::cout << "Имя: " << a[i].name << '\n';
+                    std::cout << "Отчество: " << a[i].papa << '\n';
+                    std::cout << "Номер отдела: " << a[i].number << '\n';
+                    std::cout << "Должность: " << a[i].post << '\n';
+                    std::cout << "Стаж: " << a[i].years << '\n';
                     std::cout << '\n';
                 }
             }
