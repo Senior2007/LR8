@@ -13,7 +13,9 @@ void find() {
     std::cin >> pr;
     std::cout << "Введите по какому значению хотите найти данные\n";
     std::string s;
-    int cnt = 0, x;
+    int cnt = 0;
+    long long x;
+    std::cout << '\n';
 
     switch (pr) {
         case 1:
@@ -28,7 +30,7 @@ void find() {
                     std::cout << "Отчество: " << a[i].papa << '\n';
                     std::cout << "Номер отдела: " << a[i].number << '\n';
                     std::cout << "Должность: " << a[i].post << '\n';
-                    std::cout << "Стаж: " << a[i].years << '\n';
+                    std::cout << "Стаж: " << ((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) << '\n';
                     std::cout << '\n';
                 }
             }
@@ -48,7 +50,7 @@ void find() {
                     std::cout << "Отчество: " << a[i].papa << '\n';
                     std::cout << "Номер отдела: " << a[i].number << '\n';
                     std::cout << "Должность: " << a[i].post << '\n';
-                    std::cout << "Стаж: " << a[i].years << '\n';
+                    std::cout << "Стаж: " << ((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) << '\n';
                     std::cout << '\n';
                 }
             }
@@ -68,7 +70,7 @@ void find() {
                     std::cout << "Отчество: " << a[i].papa << '\n';
                     std::cout << "Номер отдела: " << a[i].number << '\n';
                     std::cout << "Должность: " << a[i].post << '\n';
-                    std::cout << "Стаж: " << a[i].years << '\n';
+                    std::cout << "Стаж: " << ((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) << '\n';
                     std::cout << '\n';
                 }
             }
@@ -88,7 +90,7 @@ void find() {
                     std::cout << "Отчество: " << a[i].papa << '\n';
                     std::cout << "Номер отдела: " << a[i].number << '\n';
                     std::cout << "Должность: " << a[i].post << '\n';
-                    std::cout << "Стаж: " << a[i].years << '\n';
+                    std::cout << "Стаж: " << ((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) << '\n';
                     std::cout << '\n';
                 }
             }
@@ -108,7 +110,7 @@ void find() {
                     std::cout << "Отчество: " << a[i].papa << '\n';
                     std::cout << "Номер отдела: " << a[i].number << '\n';
                     std::cout << "Должность: " << a[i].post << '\n';
-                    std::cout << "Стаж: " << a[i].years << '\n';
+                    std::cout << "Стаж: " << ((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) << '\n';
                     std::cout << '\n';
                 }
             }
@@ -121,14 +123,14 @@ void find() {
 
             std::cout << "Результат поиска :\n";
             for (int i = 0; i < n; i++) {
-                if (a[i].years == x) {
+                if (((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) == x) {
                     cnt++;
                     std::cout << "Фамилия: " << a[i].surname << '\n';
                     std::cout << "Имя: " << a[i].name << '\n';
                     std::cout << "Отчество: " << a[i].papa << '\n';
                     std::cout << "Номер отдела: " << a[i].number << '\n';
                     std::cout << "Должность: " << a[i].post << '\n';
-                    std::cout << "Стаж: " << a[i].years << '\n';
+                    std::cout << "Стаж: " << ((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) << '\n';
                     std::cout << '\n';
                 }
             }

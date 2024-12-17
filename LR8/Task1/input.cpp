@@ -24,7 +24,11 @@ void input1() {
         std::cin >> a[i].post;
 
         std::cout << "Стаж: ";
-        std::cin >> a[i].years;
+        if (a[i].post == "Директор") {
+            std::cin >> a[i].data.years_l;
+        } else {
+            std::cin >> a[i].data.years_i;
+        }
         std::cout << '\n';
     }
 }
@@ -91,7 +95,11 @@ void input2() {
         std::cin >> b[n].post;
 
         std::cout << "Стаж: ";
-        std::cin >> b[n].years;
+        if (b[n].post == "Директор"){
+            std::cin >> b[n].data.years_l;
+        } else {
+            std::cin >> b[n].data.years_i;
+        }
         std::cout << '\n';
 
         n++;
@@ -126,7 +134,7 @@ void input2() {
                 }
                 break;
             case 6:
-                if (a[n - 1].years == key_years) {
+                if (((a[n - 1].post == "Директор") ? a[n - 1].data.years_l : a[n - 1].data.years_i) == key_years) {
                     pr_break = 1;
                 }
                 break;
@@ -174,7 +182,11 @@ void input3() {
         std::cin >> b[n].post;
 
         std::cout << "Стаж: ";
-        std::cin >> b[n].years;
+        if (b[n].post == "Директор") {
+            std::cin >> b[n].data.years_l;
+        } else {
+            std::cin >> b[n].data.years_i;
+        }
         std::cout << '\n';
 
         n++;

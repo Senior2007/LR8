@@ -1,7 +1,7 @@
 #include "functions.h"
 
 void add() {
-    std::cout << "Введите количество сотрудников, которых хотите добавить\n";
+    std::cout << "\nВведите количество сотрудников, которых хотите добавить\n";
     int add_person;
     std::cin >> add_person;
 
@@ -25,7 +25,11 @@ void add() {
         std::cin >> a[i].post;
 
         std::cout << "Стаж: ";
-        std::cin >> a[i].years;
+        if (a[i].post == "Директор") {
+            std::cin >> a[i].data.years_l;
+        } else {
+            std::cin >> a[i].data.years_i;
+        }
         std::cout << '\n';
     }
 

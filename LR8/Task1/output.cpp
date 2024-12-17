@@ -12,7 +12,7 @@ void output() {
         std::cout << "Отчество: " << a[i].papa << '\n';
         std::cout << "Номер отдела: " << a[i].number << '\n';
         std::cout << "Должность: " << a[i].post << '\n';
-        std::cout << "Стаж: " << a[i].years << '\n';
+        std::cout << "Стаж: " << ((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) << '\n';
         std::cout << '\n';
     }
 }

@@ -5,7 +5,8 @@ void change(int idx) {
     int num;
     std::cin >> num;
     std::string new_surname, new_name, new_papa, new_post;
-    int new_number, new_years;
+    int new_number;
+    long long new_years;
 
     switch (num) {
         case 1:
@@ -36,7 +37,11 @@ void change(int idx) {
         default:
             std::cout << "\nВведите новый стаж сотрудника\n";
             std::cin >> new_years;
-            a[idx].years = new_years;
+            if (a[idx].post == "Директор") {
+                a[idx].data.years_l = new_years;
+            } else {
+                a[idx].data.years_i = new_years;
+            }
             break;
     }
 }
@@ -47,9 +52,10 @@ void change_all() {
     std::cin >> num;
 
     std::string key_surname, key_name, key_papa, key_post;
-    int key_number, key_years;
+    int key_number;
     std::string new_surname, new_name, new_papa, new_post;
-    int new_number, new_years;
+    int new_number;
+    long long new_years, key_years;
 
     switch (num) {
         case 1:
@@ -119,8 +125,13 @@ void change_all() {
             std::cin >> new_years;
 
             for (int i = 0; i < n; i++) {
-                if (a[i].years == key_years) {
-                    a[i].years = new_years;
+                if (((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) == key_years) {
+                    if (a[i].post == "Директор") {
+                        a[i].data.years_l = new_years;
+                    } else {
+                        a[i].data.years_i = new_years;
+                    }
+
                 }
             }
             break;
@@ -133,7 +144,8 @@ void delete_all() {
     std::cin >> pr;
 
     std::string key_surname, key_name, key_papa, key_post;
-    int key_number, key_years;
+    int key_number;
+    long long key_years;
     std::map<int, bool> used;
 
     switch (pr) {
@@ -192,8 +204,8 @@ void delete_all() {
             std::cin >> key_years;
 
             for (int i = 0; i < n; i++) {
-                if (a[i].years == key_years) {
-                    used[i];
+                if (((a[i].post == "Директор") ? a[i].data.years_l : a[i].data.years_i) == key_years) {
+                    used[i] = 1;
                 }
             }
             break;
