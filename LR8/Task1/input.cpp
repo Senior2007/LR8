@@ -198,6 +198,49 @@ void input3() {
     std::cout << '\n';
 }
 
+void read_cur(std::ifstream& file, int idx) {
+    auto readString = [&file]() {
+        size_t length;
+        file.read(reinterpret_cast<char*>(&length), sizeof(length));
+        std::string str(length, '\0');
+        file.read(&str[0], length);
+        return str;
+    };
+
+    a[idx].surname = readString();
+    a[idx].name = readString();
+    a[idx].papa = readString();
+    file.read(reinterpret_cast<char*>(&a[idx].number), sizeof(a[idx].number));
+    a[idx].post = readString();
+    file.read(reinterpret_cast<char*>(&a[idx].data), sizeof(a[idx].data));
+}
+
+void input4() {
+    input_:
+    std::cout << "\nВведите название файла с расширением (.bin)\n";
+    std::string file_name;
+    std::cin >> file_name;
+
+    std::ifstream file(file_name, std::ios::binary);
+    if (!file) {
+        std::cerr << "Ошибка при открытии файла для чтения!\n";
+        goto input_;
+    }
+
+    int count;
+    file.read(reinterpret_cast<char*>(&count), sizeof(count));
+
+    n = count;
+    a = (person*)malloc(n * sizeof(person));
+
+    for (int i = 0; i < n; i++) {
+        read_cur(file, i);
+    }
+
+    file.close();
+    std::cout << '\n';
+}
+
 void input() {
     free(a);
     a = nullptr;
@@ -207,6 +250,7 @@ void input() {
     std::cout << "\n1. Ввод заранее известного количества сотрудников\n";
     std::cout << "2. Ввод до появления заданного признака\n";
     std::cout << "3. Ввод с диалогом\n";
+    std::cout << "4. Чтение из двоичного файла\n";
     std::cout << "Введите режим ввода : ";
 
     int pr;
@@ -221,6 +265,9 @@ void input() {
             break;
         case 3:
             input3();
+            break;
+        case 4:
+            input4();
             break;
         default:
             std::cout << "\nНеправильный ввод\n";

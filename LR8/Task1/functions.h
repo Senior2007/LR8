@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <map>
+#include <fstream>
 
 typedef struct person {
     std::string surname;
@@ -25,7 +26,9 @@ extern int n;
 void input1();
 void input2();
 void input3();
+void input4();
 void input();
+void output_file();
 void output();
 void add();
 void menu();

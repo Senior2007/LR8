@@ -11,4 +11,5 @@ add_executable(Task1 main.cpp
         menu.cpp
         find.cpp
         delete_and_change.cpp
-        sort.cpp)
+        sort.cpp
+        output_file.cpp)

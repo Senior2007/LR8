@@ -97,6 +97,12 @@ build CMakeFiles/Task1.dir/sort.cpp.o: CXX_COMPILER__Task1_unscanned_Debug /User
   OBJECT_DIR = CMakeFiles/Task1.dir
   OBJECT_FILE_DIR = CMakeFiles/Task1.dir
 
+build CMakeFiles/Task1.dir/output_file.cpp.o: CXX_COMPILER__Task1_unscanned_Debug /Users/senior/Documents/453505/ОАиП/LR8/Task1/output_file.cpp || cmake_object_order_depends_target_Task1
+  DEP_FILE = CMakeFiles/Task1.dir/output_file.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Task1.dir
+  OBJECT_FILE_DIR = CMakeFiles/Task1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Task1
@@ -105,7 +111,7 @@ build CMakeFiles/Task1.dir/sort.cpp.o: CXX_COMPILER__Task1_unscanned_Debug /User
 #############################################
 # Link the executable Task1
 
-build Task1: CXX_EXECUTABLE_LINKER__Task1_Debug CMakeFiles/Task1.dir/main.cpp.o CMakeFiles/Task1.dir/input.cpp.o CMakeFiles/Task1.dir/output.cpp.o CMakeFiles/Task1.dir/add.cpp.o CMakeFiles/Task1.dir/menu.cpp.o CMakeFiles/Task1.dir/find.cpp.o CMakeFiles/Task1.dir/delete_and_change.cpp.o CMakeFiles/Task1.dir/sort.cpp.o
+build Task1: CXX_EXECUTABLE_LINKER__Task1_Debug CMakeFiles/Task1.dir/main.cpp.o CMakeFiles/Task1.dir/input.cpp.o CMakeFiles/Task1.dir/output.cpp.o CMakeFiles/Task1.dir/add.cpp.o CMakeFiles/Task1.dir/menu.cpp.o CMakeFiles/Task1.dir/find.cpp.o CMakeFiles/Task1.dir/delete_and_change.cpp.o CMakeFiles/Task1.dir/sort.cpp.o CMakeFiles/Task1.dir/output_file.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3
   OBJECT_DIR = CMakeFiles/Task1.dir
   POST_BUILD = :

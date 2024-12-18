@@ -27,12 +27,14 @@ int main() {
         switch (type) {
             case 1 :
                 input();
+                output_file();
                 break;
             case 2 :
                 output();
                 break;
             case 3 :
                 add();
+                output_file();
                 break;
             case 4 :
                 find();
@@ -42,6 +44,7 @@ int main() {
                 break;
             case 6:
                 sort();
+                output_file();
                 break;
             case 7 :
                 menu();

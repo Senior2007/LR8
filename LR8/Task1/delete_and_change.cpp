@@ -1,5 +1,38 @@
 #include "functions.h"
 
+void write_cur(std::fstream& out, int idx) {
+    auto writeString = [&out](const std::string& str) {
+        size_t length = str.size();
+        out.write(reinterpret_cast<const char*>(&length), sizeof(length));
+        out.write(str.data(), length);
+    };
+
+    writeString(a[idx].surname);
+    writeString(a[idx].name);
+    writeString(a[idx].papa);
+    out.write(reinterpret_cast<const char*>(&a[idx].number), sizeof(a[idx].number));
+    writeString(a[idx].post);
+    out.write(reinterpret_cast<const char*>(&a[idx].data), sizeof(a[idx].data));
+}
+
+void change_in_file(int idx) {
+    const char* filename = "output.bin";
+    std::fstream file(filename, std::ios::in | std::ios::out | std::ios::binary);
+    int sum = sizeof(n);
+    for (int i = 0; i < idx; i++) {
+        sum += sizeof(a[i].number);
+        sum += sizeof(a[i].data);
+        sum += a[i].papa.size();
+        sum += a[i].surname.size();
+        sum += a[i].post.size();
+        sum += a[i].name.size();
+        sum += 4 * sizeof(size_t);
+    }
+    file.seekp(sum, std::ios::beg);
+    write_cur(file, idx);
+    file.close();
+}
+
 void change(int idx) {
     std::cout << "\nВведите номер критерия который хотите изменить\n";
     int num;
@@ -13,26 +46,31 @@ void change(int idx) {
             std::cout << "\nВведите новую фамилию сотрудника\n";
             std::cin >> new_surname;
             a[idx].surname = new_surname;
+            change_in_file(idx);
             break;
         case 2:
             std::cout << "\nВведите новое имя сотрудника\n";
             std::cin >> new_name;
             a[idx].name = new_name;
+            change_in_file(idx);
             break;
         case 3:
             std::cout << "\nВведите новое отчество сотрудника\n";
             std::cin >> new_papa;
             a[idx].papa = new_papa;
+            change_in_file(idx);
             break;
         case 4:
             std::cout << "\nВведите новый номер отдела сотрудника\n";
             std::cin >> new_number;
             a[idx].number = new_number;
+            change_in_file(idx);
             break;
         case 5:
             std::cout << "\nВведите новую должность сотрудника\n";
             std::cin >> new_post;
             a[idx].post = new_post;
+            change_in_file(idx);
             break;
         default:
             std::cout << "\nВведите новый стаж сотрудника\n";
@@ -42,6 +80,7 @@ void change(int idx) {
             } else {
                 a[idx].data.years_i = new_years;
             }
+            change_in_file(idx);
             break;
     }
 }
@@ -67,6 +106,7 @@ void change_all() {
             for (int i = 0; i < n; i++) {
                 if (a[i].surname == key_surname) {
                     a[i].surname = new_surname;
+                    change_in_file(i);
                 }
             }
             break;
@@ -79,6 +119,7 @@ void change_all() {
             for (int i = 0; i < n; i++) {
                 if (a[i].name == key_name) {
                     a[i].name = new_name;
+                    change_in_file(i);
                 }
             }
             break;
@@ -91,6 +132,7 @@ void change_all() {
             for (int i = 0; i < n; i++) {
                 if (a[i].papa == key_papa) {
                     a[i].papa = new_papa;
+                    change_in_file(i);
                 }
             }
             break;
@@ -103,6 +145,7 @@ void change_all() {
             for (int i = 0; i < n; i++) {
                 if (a[i].number == key_number) {
                     a[i].number = new_number;
+                    change_in_file(i);
                 }
             }
             break;
@@ -115,6 +158,7 @@ void change_all() {
             for (int i = 0; i < n; i++) {
                 if (a[i].post == key_post) {
                     a[i].post = new_post;
+                    change_in_file(i);
                 }
             }
             break;
@@ -131,7 +175,7 @@ void change_all() {
                     } else {
                         a[i].data.years_i = new_years;
                     }
-
+                    change_in_file(i);
                 }
             }
             break;
@@ -291,6 +335,7 @@ void delete_and_change() {
         }
 
         delete_all();
+        output_file();
         return;
     }
 
@@ -322,4 +367,5 @@ void delete_and_change() {
 
     change_all();
     std::cout << '\n';
+    output_file();
 }
